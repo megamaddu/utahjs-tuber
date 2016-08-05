@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from './actions'
+import { getIssues, getSelectedIssue } from './reducers'
 // import './HelpForm.css'
 
 const HelpForm = ({issues, selectedIssue, problemSelected}) => (
@@ -16,9 +17,9 @@ const HelpForm = ({issues, selectedIssue, problemSelected}) => (
   </form>
 )
 
-const mapStateToProps = ({issues, selectedIssue}) => ({
-  issues,
-  selectedIssue
+const mapStateToProps = (state) => ({
+  issues: getIssues(state),
+  selectedIssue: getSelectedIssue(state)
 })
 
 const mapDispatchToProps = {

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { getSelectedIssueText } from './reducers'
 import './App.css'
 import HelpForm from './HelpForm'
 
@@ -19,8 +20,8 @@ const App = ({issue}) => (
   </div>
 )
 
-const mapStateToProps = ({issues, selectedIssue}) => ({
-  issue: issues[selectedIssue]
+const mapStateToProps = (state) => ({
+  issue: getSelectedIssueText(state)
 })
 
 export default connect(mapStateToProps)(App)

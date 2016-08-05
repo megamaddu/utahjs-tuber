@@ -21,3 +21,10 @@ export default combineReducers({
   issues,
   selectedIssue
 })
+
+export const getIssues = (state) => state.issues
+
+export const getSelectedIssue = (state) => state.selectedIssue
+
+export const getSelectedIssueText = (state) => state.issues[getSelectedIssue(state)]
+
