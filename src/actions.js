@@ -1,0 +1,1 @@
+export const PROBLEM_SELECTED = 'PROBLEM_SELECTED'
